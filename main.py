@@ -1,7 +1,6 @@
 import xml.etree.ElementTree as ET
 import sys
 
-# total arguments
 n = len(sys.argv)
 
 if n < 4:
@@ -10,10 +9,8 @@ if n < 4:
    sys.exit()
 
 
-
-
-
 def change_in_file(filename):
+   print("scaning ", filename)
    tree = ET.parse(filename)
    root = tree.getroot()
 
@@ -37,4 +34,5 @@ def change_in_file(filename):
    tree.write('mod_'+filename)
 
 
-change_in_file(sys.argv[3])
+for i in range(3, n):
+   change_in_file(sys.argv[i])
